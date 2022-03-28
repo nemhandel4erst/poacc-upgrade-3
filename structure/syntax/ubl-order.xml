@@ -2148,7 +2148,7 @@
 					</Element>
 					<Element cardinality="0..1">
 						<Term>cac:TransactionConditions</Term>
-						<Name>Contracted </Name>
+						<Name>Contracted item</Name>
 						<Element>
 							<Term>cbc:ActionCode</Term>
 							<Name>Contracted item indicator</Name>
