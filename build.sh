@@ -20,6 +20,7 @@ docker run --rm -i -v $PROJECT:/src anskaffelser/validator:2.1.0 build -x -t -n 
 for sch in $PROJECT/rules/sch/*.sch; do
     docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/schematron:/target klakegg/schematron prepare /src/rules/sch/$(basename $sch) /target/$(basename $sch)
 done
+
 docker run --rm -i -v $PROJECT/target/site/files:/src alpine:3.6 rm -rf /src/PEPPOLBIS-Upgrade-Schematron.zip
 docker run --rm -i -v $PROJECT/target/schematron:/src -v $PROJECT/target/site/files:/target -w /src kramos/alpine-zip -r /target/PEPPOLBIS-Upgrade-Schematron.zip .
 
